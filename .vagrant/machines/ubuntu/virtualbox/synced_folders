@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/components":{"type":"virtualbox","guestpath":"/home/vagrant/components","hostpath":"/home/paul/Documents/jsvm/components","disabled":false},"/home/vagrant/ansible":{"type":"virtualbox","guestpath":"/home/vagrant/ansible","hostpath":"/home/paul/Documents/jsvm/ansible","disabled":false}}}

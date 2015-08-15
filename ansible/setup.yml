@@ -1,0 +1,30 @@
+- hosts: all
+  user: root
+  sudo: yes
+  vars_files:
+    - ./settings.yml
+
+  tasks:
+
+    - name: bash_profile
+      template:
+        src: ./templates/bash_profile.j2
+        dest: /home/vagrant/.bash_profile
+
+    - name: add git repository
+      apt_repository:
+        repo: ppa:git-core/ppa
+
+    - name: install required packages
+      apt:
+        pkg: "{{item}}"
+        state: present
+        update_cache: yes
+      with_items:
+        - software-properties-common
+        - curl
+        - git 
+
+    - name: update all packages
+      apt:
+        upgrade: dist
